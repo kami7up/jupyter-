@@ -1,0 +1,53 @@
+from IPython.display import display, SVG
+
+svg_code = '''
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for background -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffe0b2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffccbc;stop-opacity:1" />
+    </linearGradient>
+    <!-- Gradient for text -->
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d32f2f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fbc02d;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Styles for lines and rectangles with lighter colors -->
+    <style>
+      .line { stroke: #999; stroke-width: 8; stroke-linecap: round; }
+      .rect { fill: none; stroke: #ccc; stroke-width: 8; }
+      .message { font-family: 'Arial Black', sans-serif; font-size: 48px; fill: url(#textGradient); text-anchor: middle; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGradient)" />
+
+  <!-- Asymmetric Swiss style pattern with lighter stroke -->
+  <path class="line" d="M 50 50 L 300 80 L 250 300 L 80 250 Z" fill="none" stroke="#999" stroke-width="8"/>
+  <path class="line" d="M 550 50 L 700 150 L 650 400 L 520 350 Z" fill="none" stroke="#999" stroke-width="8"/>
+  <path class="line" d="M 100 500 L 300 550 L 250 400 L 120 420 Z" fill="none" stroke="#999" stroke-width="8"/>
+  <path class="line" d="M 600 500 L 750 550 L 700 400 L 580 430 Z" fill="none" stroke="#999" stroke-width="8"/>
+  <path class="line" d="M 350 150 L 430 200 L 380 300 L 330 250 Z" fill="none" stroke="#999" stroke-width="8"/>
+  <path class="line" d="M 80 100 L 500 60" />
+  <path class="line" d="M 200 350 L 700 300" />
+  <path class="line" d="M 150 150 L 600 550" />
+  <path class="line" d="M 100 550 L 700 50" />
+  <path class="line" d="M 400 100 L 400 500" />
+
+  <!-- Rectangles for text placement -->
+  <rect x="50" y="40" width="150" height="80" class="rect" fill="none" stroke="#ccc"/>
+  <rect x="325" y="180" width="150" height="80" class="rect" fill="none" stroke="#ccc"/>
+  <rect x="600" y="400" width="150" height="80" class="rect" fill="none" stroke="#ccc"/>
+
+  <!-- Text placements -->
+  <text x="125" y="80" class="message" fill="#000">Happy</text>
+  <text x="400" y="220" class="message" fill="#000">Mother</text>
+  <text x="675" y="440" class="message" fill="#000">Day</text>
+</svg>
+'''
+
+# Display the updated design
+display(SVG(svg_code))
